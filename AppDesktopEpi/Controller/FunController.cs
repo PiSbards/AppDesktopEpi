@@ -115,7 +115,7 @@ namespace AppDesktopEpi.Controller
         public void Localizar(int matricula)
         {
             Funcionario funcionario = new Funcionario();
-            string sql = "SELECT * FROM funcionario WHERE id='" + matricula + "'";
+            string sql = "SELECT * FROM funcionario WHERE matricula='" + matricula + "'";
             if (conn.State == ConnectionState.Closed)
             {
                 conn.Open();
@@ -124,6 +124,7 @@ namespace AppDesktopEpi.Controller
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
+                funcionario.matricula = (int)dr["matricula"];
                 funcionario.nome = dr["nome"].ToString();                
                 funcionario.epi = dr["epi"].ToString();
                 funcionario.data_entrega = (DateTime)dr["data_entrega"];

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvFunc = new System.Windows.Forms.DataGridView();
             this.btnNovaEntrega = new System.Windows.Forms.Button();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -49,42 +48,29 @@
             this.lblDataEntrega = new System.Windows.Forms.Label();
             this.btnEpiVencidas = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnNovoItem = new System.Windows.Forms.Button();
-            this.btnFinalizarEntrega = new System.Windows.Forms.Button();
-            this.btnEditarItem = new System.Windows.Forms.Button();
-            this.btnExcluirItem = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::AppDesktopEpi.Properties.Resources.homem_com_epi___logo;
-            this.pictureBox1.Location = new System.Drawing.Point(683, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(225, 289);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // dgvFunc
             // 
             this.dgvFunc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFunc.Location = new System.Drawing.Point(12, 384);
             this.dgvFunc.Name = "dgvFunc";
-            this.dgvFunc.Size = new System.Drawing.Size(896, 265);
+            this.dgvFunc.Size = new System.Drawing.Size(754, 265);
             this.dgvFunc.TabIndex = 1;
             this.dgvFunc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFunc_CellClick);
             // 
             // btnNovaEntrega
             // 
-            this.btnNovaEntrega.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnNovaEntrega.BackColor = System.Drawing.Color.OliveDrab;
             this.btnNovaEntrega.FlatAppearance.BorderSize = 0;
             this.btnNovaEntrega.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOliveGreen;
             this.btnNovaEntrega.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNovaEntrega.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovaEntrega.ForeColor = System.Drawing.Color.White;
-            this.btnNovaEntrega.Location = new System.Drawing.Point(433, 12);
+            this.btnNovaEntrega.Location = new System.Drawing.Point(13, 326);
             this.btnNovaEntrega.Name = "btnNovaEntrega";
             this.btnNovaEntrega.Size = new System.Drawing.Size(119, 52);
             this.btnNovaEntrega.TabIndex = 2;
@@ -211,7 +197,7 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(433, 70);
+            this.btnEditar.Location = new System.Drawing.Point(144, 326);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(119, 52);
             this.btnEditar.TabIndex = 30;
@@ -227,7 +213,7 @@
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Location = new System.Drawing.Point(558, 128);
+            this.btnSair.Location = new System.Drawing.Point(647, 326);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(119, 52);
             this.btnSair.TabIndex = 31;
@@ -243,7 +229,7 @@
             this.btnEpi3dias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEpi3dias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEpi3dias.ForeColor = System.Drawing.Color.White;
-            this.btnEpi3dias.Location = new System.Drawing.Point(558, 12);
+            this.btnEpi3dias.Location = new System.Drawing.Point(417, 12);
             this.btnEpi3dias.Name = "btnEpi3dias";
             this.btnEpi3dias.Size = new System.Drawing.Size(119, 52);
             this.btnEpi3dias.TabIndex = 32;
@@ -268,7 +254,7 @@
             this.btnEpiVencidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEpiVencidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEpiVencidas.ForeColor = System.Drawing.Color.White;
-            this.btnEpiVencidas.Location = new System.Drawing.Point(558, 70);
+            this.btnEpiVencidas.Location = new System.Drawing.Point(417, 80);
             this.btnEpiVencidas.Name = "btnEpiVencidas";
             this.btnEpiVencidas.Size = new System.Drawing.Size(119, 52);
             this.btnEpiVencidas.TabIndex = 34;
@@ -284,7 +270,7 @@
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.Location = new System.Drawing.Point(433, 128);
+            this.btnExcluir.Location = new System.Drawing.Point(269, 326);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(119, 52);
             this.btnExcluir.TabIndex = 35;
@@ -292,80 +278,22 @@
             this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-            // btnNovoItem
+            // pictureBox1
             // 
-            this.btnNovoItem.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnNovoItem.FlatAppearance.BorderSize = 0;
-            this.btnNovoItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btnNovoItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovoItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovoItem.ForeColor = System.Drawing.Color.White;
-            this.btnNovoItem.Location = new System.Drawing.Point(13, 340);
-            this.btnNovoItem.Name = "btnNovoItem";
-            this.btnNovoItem.Size = new System.Drawing.Size(103, 38);
-            this.btnNovoItem.TabIndex = 36;
-            this.btnNovoItem.Text = "NOVO ITEM";
-            this.btnNovoItem.UseVisualStyleBackColor = false;
-            this.btnNovoItem.Click += new System.EventHandler(this.btnNovoItem_Click);
-            // 
-            // btnFinalizarEntrega
-            // 
-            this.btnFinalizarEntrega.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnFinalizarEntrega.FlatAppearance.BorderSize = 0;
-            this.btnFinalizarEntrega.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnFinalizarEntrega.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFinalizarEntrega.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizarEntrega.ForeColor = System.Drawing.Color.White;
-            this.btnFinalizarEntrega.Location = new System.Drawing.Point(340, 340);
-            this.btnFinalizarEntrega.Name = "btnFinalizarEntrega";
-            this.btnFinalizarEntrega.Size = new System.Drawing.Size(103, 38);
-            this.btnFinalizarEntrega.TabIndex = 37;
-            this.btnFinalizarEntrega.Text = "FINALIZAR ENTREGA";
-            this.btnFinalizarEntrega.UseVisualStyleBackColor = false;
-            this.btnFinalizarEntrega.Click += new System.EventHandler(this.btnFinalizarEntrega_Click);
-            // 
-            // btnEditarItem
-            // 
-            this.btnEditarItem.BackColor = System.Drawing.Color.Teal;
-            this.btnEditarItem.FlatAppearance.BorderSize = 0;
-            this.btnEditarItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btnEditarItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarItem.ForeColor = System.Drawing.Color.White;
-            this.btnEditarItem.Location = new System.Drawing.Point(122, 340);
-            this.btnEditarItem.Name = "btnEditarItem";
-            this.btnEditarItem.Size = new System.Drawing.Size(103, 38);
-            this.btnEditarItem.TabIndex = 38;
-            this.btnEditarItem.Text = "EDITAR ITEM";
-            this.btnEditarItem.UseVisualStyleBackColor = false;
-            this.btnEditarItem.Click += new System.EventHandler(this.btnEditarItem_Click);
-            // 
-            // btnExcluirItem
-            // 
-            this.btnExcluirItem.BackColor = System.Drawing.Color.DarkSalmon;
-            this.btnExcluirItem.FlatAppearance.BorderSize = 0;
-            this.btnExcluirItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
-            this.btnExcluirItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluirItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluirItem.ForeColor = System.Drawing.Color.White;
-            this.btnExcluirItem.Location = new System.Drawing.Point(231, 340);
-            this.btnExcluirItem.Name = "btnExcluirItem";
-            this.btnExcluirItem.Size = new System.Drawing.Size(103, 38);
-            this.btnExcluirItem.TabIndex = 39;
-            this.btnExcluirItem.Text = "EXCLUIR ITEM";
-            this.btnExcluirItem.UseVisualStyleBackColor = false;
-            this.btnExcluirItem.Click += new System.EventHandler(this.btnExcluirItem_Click);
+            this.pictureBox1.Image = global::AppDesktopEpi.Properties.Resources.homem_com_epi___logo;
+            this.pictureBox1.Location = new System.Drawing.Point(542, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(225, 289);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(920, 661);
-            this.Controls.Add(this.btnExcluirItem);
-            this.Controls.Add(this.btnEditarItem);
-            this.Controls.Add(this.btnFinalizarEntrega);
-            this.Controls.Add(this.btnNovoItem);
+            this.ClientSize = new System.Drawing.Size(778, 661);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnEpiVencidas);
             this.Controls.Add(this.lblDataEntrega);
@@ -391,10 +319,11 @@
             this.MinimizeBox = false;
             this.Name = "FrmPrincipal";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Controle de EPI";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -423,10 +352,6 @@
         private System.Windows.Forms.Label lblDataEntrega;
         private System.Windows.Forms.Button btnEpiVencidas;
         private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Button btnNovoItem;
-        private System.Windows.Forms.Button btnFinalizarEntrega;
-        private System.Windows.Forms.Button btnEditarItem;
-        private System.Windows.Forms.Button btnExcluirItem;
     }
 }
 
