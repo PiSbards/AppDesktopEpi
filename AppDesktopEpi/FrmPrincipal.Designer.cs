@@ -30,15 +30,12 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvFunc = new System.Windows.Forms.DataGridView();
-            this.btnInserir = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.btnNovaEntrega = new System.Windows.Forms.Button();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtMatricula = new System.Windows.Forms.TextBox();
+            this.txtEpi = new System.Windows.Forms.TextBox();
             this.btnLocalizar = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtDias = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,7 +45,14 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnEpi3dias = new System.Windows.Forms.Button();
+            this.lblDataEntrega = new System.Windows.Forms.Label();
+            this.btnEpiVencidas = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnNovoItem = new System.Windows.Forms.Button();
+            this.btnFinalizarEntrega = new System.Windows.Forms.Button();
+            this.btnEditarItem = new System.Windows.Forms.Button();
+            this.btnExcluirItem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).BeginInit();
             this.SuspendLayout();
@@ -70,66 +74,44 @@
             this.dgvFunc.Name = "dgvFunc";
             this.dgvFunc.Size = new System.Drawing.Size(896, 265);
             this.dgvFunc.TabIndex = 1;
+            this.dgvFunc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFunc_CellClick);
             // 
-            // btnInserir
+            // btnNovaEntrega
             // 
-            this.btnInserir.BackColor = System.Drawing.Color.YellowGreen;
-            this.btnInserir.FlatAppearance.BorderSize = 0;
-            this.btnInserir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnInserir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInserir.ForeColor = System.Drawing.Color.White;
-            this.btnInserir.Location = new System.Drawing.Point(355, 12);
-            this.btnInserir.Name = "btnInserir";
-            this.btnInserir.Size = new System.Drawing.Size(155, 63);
-            this.btnInserir.TabIndex = 2;
-            this.btnInserir.Text = "INSERIR";
-            this.btnInserir.UseVisualStyleBackColor = false;
+            this.btnNovaEntrega.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnNovaEntrega.FlatAppearance.BorderSize = 0;
+            this.btnNovaEntrega.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnNovaEntrega.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovaEntrega.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovaEntrega.ForeColor = System.Drawing.Color.White;
+            this.btnNovaEntrega.Location = new System.Drawing.Point(433, 12);
+            this.btnNovaEntrega.Name = "btnNovaEntrega";
+            this.btnNovaEntrega.Size = new System.Drawing.Size(119, 52);
+            this.btnNovaEntrega.TabIndex = 2;
+            this.btnNovaEntrega.Text = "NOVA ENTREGA";
+            this.btnNovaEntrega.UseVisualStyleBackColor = false;
+            this.btnNovaEntrega.Click += new System.EventHandler(this.btnNovaEntrega_Click);
             // 
-            // label1
+            // txtNome
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 15);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "ID:";
+            this.txtNome.Location = new System.Drawing.Point(11, 67);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(146, 20);
+            this.txtNome.TabIndex = 9;
             // 
-            // textBox1
+            // txtMatricula
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(64, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtMatricula.Location = new System.Drawing.Point(11, 22);
+            this.txtMatricula.Name = "txtMatricula";
+            this.txtMatricula.Size = new System.Drawing.Size(122, 20);
+            this.txtMatricula.TabIndex = 11;
             // 
-            // textBox2
+            // txtEpi
             // 
-            this.textBox2.Location = new System.Drawing.Point(16, 78);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(146, 20);
-            this.textBox2.TabIndex = 9;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(16, 128);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(122, 20);
-            this.textBox3.TabIndex = 11;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(16, 178);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(122, 20);
-            this.textBox4.TabIndex = 13;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(16, 225);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(122, 20);
-            this.textBox5.TabIndex = 15;
+            this.txtEpi.Location = new System.Drawing.Point(10, 112);
+            this.txtEpi.Name = "txtEpi";
+            this.txtEpi.Size = new System.Drawing.Size(122, 20);
+            this.txtEpi.TabIndex = 13;
             // 
             // btnLocalizar
             // 
@@ -137,25 +119,26 @@
             this.btnLocalizar.FlatAppearance.BorderSize = 0;
             this.btnLocalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLocalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLocalizar.Location = new System.Drawing.Point(86, 22);
+            this.btnLocalizar.Location = new System.Drawing.Point(139, 14);
             this.btnLocalizar.Name = "btnLocalizar";
             this.btnLocalizar.Size = new System.Drawing.Size(89, 32);
             this.btnLocalizar.TabIndex = 18;
             this.btnLocalizar.Text = "LOCALIZAR";
             this.btnLocalizar.UseVisualStyleBackColor = false;
+            this.btnLocalizar.Click += new System.EventHandler(this.btnLocalizar_Click);
             // 
-            // textBox7
+            // txtDias
             // 
-            this.textBox7.Location = new System.Drawing.Point(214, 178);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(53, 20);
-            this.textBox7.TabIndex = 22;
+            this.txtDias.Location = new System.Drawing.Point(175, 112);
+            this.txtDias.Name = "txtDias";
+            this.txtDias.Size = new System.Drawing.Size(53, 20);
+            this.txtDias.TabIndex = 22;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 60);
+            this.label2.Location = new System.Drawing.Point(7, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 15);
             this.label2.TabIndex = 23;
@@ -165,7 +148,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 110);
+            this.label3.Location = new System.Drawing.Point(7, 4);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 15);
             this.label3.TabIndex = 24;
@@ -175,7 +158,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 160);
+            this.label4.Location = new System.Drawing.Point(6, 94);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 15);
             this.label4.TabIndex = 25;
@@ -185,7 +168,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(180, 160);
+            this.label5.Location = new System.Drawing.Point(141, 94);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(117, 15);
             this.label5.TabIndex = 26;
@@ -195,7 +178,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(13, 207);
+            this.label7.Location = new System.Drawing.Point(10, 159);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(135, 15);
             this.label7.TabIndex = 27;
@@ -205,7 +188,7 @@
             // 
             this.lblDataVencimento.AutoSize = true;
             this.lblDataVencimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataVencimento.Location = new System.Drawing.Point(33, 286);
+            this.lblDataVencimento.Location = new System.Drawing.Point(30, 238);
             this.lblDataVencimento.Name = "lblDataVencimento";
             this.lblDataVencimento.Size = new System.Drawing.Size(0, 15);
             this.lblDataVencimento.TabIndex = 28;
@@ -214,7 +197,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 258);
+            this.label8.Location = new System.Drawing.Point(9, 210);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(161, 15);
             this.label8.TabIndex = 29;
@@ -222,33 +205,156 @@
             // 
             // btnEditar
             // 
+            this.btnEditar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(355, 112);
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.Location = new System.Drawing.Point(433, 70);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(155, 63);
+            this.btnEditar.Size = new System.Drawing.Size(119, 52);
             this.btnEditar.TabIndex = 30;
             this.btnEditar.Text = "EDITAR";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnSair
             // 
+            this.btnSair.BackColor = System.Drawing.Color.Crimson;
+            this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(355, 210);
+            this.btnSair.ForeColor = System.Drawing.Color.White;
+            this.btnSair.Location = new System.Drawing.Point(558, 128);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(155, 63);
+            this.btnSair.Size = new System.Drawing.Size(119, 52);
             this.btnSair.TabIndex = 31;
             this.btnSair.Text = "SAIR";
-            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // button4
+            // btnEpi3dias
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(522, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(155, 63);
-            this.button4.TabIndex = 32;
-            this.button4.Text = "LISTAR EPIs";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnEpi3dias.BackColor = System.Drawing.Color.Chocolate;
+            this.btnEpi3dias.FlatAppearance.BorderSize = 0;
+            this.btnEpi3dias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
+            this.btnEpi3dias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEpi3dias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEpi3dias.ForeColor = System.Drawing.Color.White;
+            this.btnEpi3dias.Location = new System.Drawing.Point(558, 12);
+            this.btnEpi3dias.Name = "btnEpi3dias";
+            this.btnEpi3dias.Size = new System.Drawing.Size(119, 52);
+            this.btnEpi3dias.TabIndex = 32;
+            this.btnEpi3dias.Text = "LISTAR EPIs À VENCER";
+            this.btnEpi3dias.UseVisualStyleBackColor = false;
+            this.btnEpi3dias.Click += new System.EventHandler(this.btnEpi3dias_Click);
+            // 
+            // lblDataEntrega
+            // 
+            this.lblDataEntrega.AutoSize = true;
+            this.lblDataEntrega.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataEntrega.Location = new System.Drawing.Point(30, 186);
+            this.lblDataEntrega.Name = "lblDataEntrega";
+            this.lblDataEntrega.Size = new System.Drawing.Size(0, 15);
+            this.lblDataEntrega.TabIndex = 33;
+            // 
+            // btnEpiVencidas
+            // 
+            this.btnEpiVencidas.BackColor = System.Drawing.Color.Maroon;
+            this.btnEpiVencidas.FlatAppearance.BorderSize = 0;
+            this.btnEpiVencidas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SaddleBrown;
+            this.btnEpiVencidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEpiVencidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEpiVencidas.ForeColor = System.Drawing.Color.White;
+            this.btnEpiVencidas.Location = new System.Drawing.Point(558, 70);
+            this.btnEpiVencidas.Name = "btnEpiVencidas";
+            this.btnEpiVencidas.Size = new System.Drawing.Size(119, 52);
+            this.btnEpiVencidas.TabIndex = 34;
+            this.btnEpiVencidas.Text = "LISTAR EPIs VENCIDAS";
+            this.btnEpiVencidas.UseVisualStyleBackColor = false;
+            this.btnEpiVencidas.Click += new System.EventHandler(this.btnEpiVencidas_Click);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackColor = System.Drawing.Color.IndianRed;
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSalmon;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.ForeColor = System.Drawing.Color.White;
+            this.btnExcluir.Location = new System.Drawing.Point(433, 128);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(119, 52);
+            this.btnExcluir.TabIndex = 35;
+            this.btnExcluir.Text = "EXCLUIR";
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnNovoItem
+            // 
+            this.btnNovoItem.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnNovoItem.FlatAppearance.BorderSize = 0;
+            this.btnNovoItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnNovoItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovoItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovoItem.ForeColor = System.Drawing.Color.White;
+            this.btnNovoItem.Location = new System.Drawing.Point(13, 340);
+            this.btnNovoItem.Name = "btnNovoItem";
+            this.btnNovoItem.Size = new System.Drawing.Size(103, 38);
+            this.btnNovoItem.TabIndex = 36;
+            this.btnNovoItem.Text = "NOVO ITEM";
+            this.btnNovoItem.UseVisualStyleBackColor = false;
+            this.btnNovoItem.Click += new System.EventHandler(this.btnNovoItem_Click);
+            // 
+            // btnFinalizarEntrega
+            // 
+            this.btnFinalizarEntrega.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnFinalizarEntrega.FlatAppearance.BorderSize = 0;
+            this.btnFinalizarEntrega.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnFinalizarEntrega.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinalizarEntrega.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizarEntrega.ForeColor = System.Drawing.Color.White;
+            this.btnFinalizarEntrega.Location = new System.Drawing.Point(340, 340);
+            this.btnFinalizarEntrega.Name = "btnFinalizarEntrega";
+            this.btnFinalizarEntrega.Size = new System.Drawing.Size(103, 38);
+            this.btnFinalizarEntrega.TabIndex = 37;
+            this.btnFinalizarEntrega.Text = "FINALIZAR ENTREGA";
+            this.btnFinalizarEntrega.UseVisualStyleBackColor = false;
+            this.btnFinalizarEntrega.Click += new System.EventHandler(this.btnFinalizarEntrega_Click);
+            // 
+            // btnEditarItem
+            // 
+            this.btnEditarItem.BackColor = System.Drawing.Color.Teal;
+            this.btnEditarItem.FlatAppearance.BorderSize = 0;
+            this.btnEditarItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarItem.ForeColor = System.Drawing.Color.White;
+            this.btnEditarItem.Location = new System.Drawing.Point(122, 340);
+            this.btnEditarItem.Name = "btnEditarItem";
+            this.btnEditarItem.Size = new System.Drawing.Size(103, 38);
+            this.btnEditarItem.TabIndex = 38;
+            this.btnEditarItem.Text = "EDITAR ITEM";
+            this.btnEditarItem.UseVisualStyleBackColor = false;
+            this.btnEditarItem.Click += new System.EventHandler(this.btnEditarItem_Click);
+            // 
+            // btnExcluirItem
+            // 
+            this.btnExcluirItem.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btnExcluirItem.FlatAppearance.BorderSize = 0;
+            this.btnExcluirItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Salmon;
+            this.btnExcluirItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluirItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluirItem.ForeColor = System.Drawing.Color.White;
+            this.btnExcluirItem.Location = new System.Drawing.Point(231, 340);
+            this.btnExcluirItem.Name = "btnExcluirItem";
+            this.btnExcluirItem.Size = new System.Drawing.Size(103, 38);
+            this.btnExcluirItem.TabIndex = 39;
+            this.btnExcluirItem.Text = "EXCLUIR ITEM";
+            this.btnExcluirItem.UseVisualStyleBackColor = false;
+            this.btnExcluirItem.Click += new System.EventHandler(this.btnExcluirItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -256,7 +362,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(920, 661);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnExcluirItem);
+            this.Controls.Add(this.btnEditarItem);
+            this.Controls.Add(this.btnFinalizarEntrega);
+            this.Controls.Add(this.btnNovoItem);
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnEpiVencidas);
+            this.Controls.Add(this.lblDataEntrega);
+            this.Controls.Add(this.btnEpi3dias);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.label8);
@@ -266,15 +379,12 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txtDias);
             this.Controls.Add(this.btnLocalizar);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnInserir);
+            this.Controls.Add(this.txtEpi);
+            this.Controls.Add(this.txtMatricula);
+            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.btnNovaEntrega);
             this.Controls.Add(this.dgvFunc);
             this.Controls.Add(this.pictureBox1);
             this.MaximizeBox = false;
@@ -282,6 +392,7 @@
             this.Name = "FrmPrincipal";
             this.ShowIcon = false;
             this.Text = "Controle de EPI";
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).EndInit();
             this.ResumeLayout(false);
@@ -293,15 +404,12 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dgvFunc;
-        private System.Windows.Forms.Button btnInserir;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button btnNovaEntrega;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtMatricula;
+        private System.Windows.Forms.TextBox txtEpi;
         private System.Windows.Forms.Button btnLocalizar;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtDias;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -311,7 +419,14 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnEpi3dias;
+        private System.Windows.Forms.Label lblDataEntrega;
+        private System.Windows.Forms.Button btnEpiVencidas;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnNovoItem;
+        private System.Windows.Forms.Button btnFinalizarEntrega;
+        private System.Windows.Forms.Button btnEditarItem;
+        private System.Windows.Forms.Button btnExcluirItem;
     }
 }
 

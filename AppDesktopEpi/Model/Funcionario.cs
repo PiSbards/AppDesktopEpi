@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace AppDesktopEpi.Model
 {
-    internal class Funcionario
+    public class Funcionario
     {
-        public int id { get; set; }
         public string nome { get; set; }
-        public string matricula { get; set; }
+        public int matricula { get; set; }
         public string epi { get; set; }       
         public DateTime data_entrega { get; set; }
         public DateTime data_vencimento { get; set; }
+
     }
 }
