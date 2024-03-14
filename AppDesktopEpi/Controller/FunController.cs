@@ -3,7 +3,9 @@ using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,9 +24,9 @@ namespace AppDesktopEpi.Controller
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                Funcionario func = new Funcionario();                
-                func.nome = dr["nome"].ToString();
+                Funcionario func = new Funcionario();
                 func.matricula = (int)dr["matricula"];
+                func.nome = dr["nome"].ToString();                
                 func.epi = dr["epi"].ToString();
                 func.data_entrega = (DateTime)dr["data_entrega"];
                 func.data_vencimento = (DateTime)dr["data_vencimento"];
@@ -58,7 +60,7 @@ namespace AppDesktopEpi.Controller
         public List<Funcionario> listaEpiAvencer()
         {
             List<Funcionario> li = new List<Funcionario>();
-            string sql = "SELECT * FROM funcionario WHERE data_vencimento - INTERVAL 3 DAY >= CURDATE() AND data_vencimento >= CURDATE()";
+            string sql = "SELECT * FROM funcionario WHERE data_vencimento BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 3 DAY)";
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             MySqlDataReader dr = cmd.ExecuteReader();
@@ -77,33 +79,48 @@ namespace AppDesktopEpi.Controller
             return li;
         }
 
-        public void Inserir(int matricula, string nome, string epi, DateTime data_entrega, DateTime data_vencimento)
+        public void Inserir(string nome, string epi, DateTime data_entrega, DateTime data_vencimento)
         {            
-            string sql = "INSERT INTO funcionario(matricula,nome,epi,data_entrega,data_vencimento) VALUES('" + matricula + "','" + nome + "','" + epi + "','" + data_entrega + "','" + data_vencimento + "')";
+            string sql = "INSERT INTO funcionario(nome,epi,data_entrega,data_vencimento) VALUES(@nome,@epi,@data_entrega,@data_vencimento)";
             if (conn.State == ConnectionState.Closed)
             {
                 conn.Open();
             }
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-            cmd.ExecuteNonQuery();
+            using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+            {
+                cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = nome;
+                cmd.Parameters.Add("@epi", MySqlDbType.VarChar).Value = epi;
+                cmd.Parameters.Add("@data_entrega", MySqlDbType.DateTime).Value = data_entrega;
+                cmd.Parameters.Add("@data_vencimento",MySqlDbType.DateTime).Value = data_vencimento;
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+            }
+
             conn.Close();
         }
 
         public void Atualizar(int matricula, string nome,string epi, DateTime data_entrega,DateTime data_vencimento)
-        {
-            
-            string sql = "UPDATE funcionario SET nome='" + nome + "',epi='" + epi + "',data_entrega='" + data_entrega + "',data_vencimento='" + data_vencimento + "' WHERE id='" +matricula + "'";
+        {            
+            string sql = "UPDATE funcionario SET nome=@nome,epi=@epi,data_entrega=@data_entrega,data_vencimento=@data_vencimento WHERE matricula=@matricula";
             if (conn.State == ConnectionState.Closed)
             {
                 conn.Open();
             }
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-            cmd.ExecuteNonQuery();
+            using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+            {
+                cmd.Parameters.Add("@matricula", MySqlDbType.Int32).Value = matricula;
+                cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = nome;
+                cmd.Parameters.Add("@epi", MySqlDbType.VarChar).Value = epi;
+                cmd.Parameters.Add("@data_entrega", MySqlDbType.DateTime).Value = data_entrega;
+                cmd.Parameters.Add("@data_vencimento", MySqlDbType.DateTime).Value = data_vencimento;
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+            }
             conn.Close();
         }
         public void Excluir(int matricula)
         {
-            string sql = "DELETE FROM funcionario WHERE id='" + matricula + "'";
+            string sql = "DELETE FROM funcionario WHERE matricula='" + matricula + "'";
             if (conn.State == ConnectionState.Closed)
             {
                 conn.Open();
@@ -112,10 +129,10 @@ namespace AppDesktopEpi.Controller
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-        public void Localizar(int matricula)
+        public Funcionario Localizar(int matricula)
         {
             Funcionario funcionario = new Funcionario();
-            string sql = "SELECT * FROM funcionario WHERE matricula='" + matricula + "'";
+            string sql = "SELECT * FROM funcionario WHERE matricula='"+matricula+"'";
             if (conn.State == ConnectionState.Closed)
             {
                 conn.Open();
@@ -129,10 +146,10 @@ namespace AppDesktopEpi.Controller
                 funcionario.epi = dr["epi"].ToString();
                 funcionario.data_entrega = (DateTime)dr["data_entrega"];
                 funcionario.data_vencimento = (DateTime)dr["data_vencimento"];
-            }
+            }            
             dr.Close();
             conn.Close();
-
+            return funcionario;
         }
 
         public bool RegistroRepetido(string nome, int matricula, string epi)

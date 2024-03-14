@@ -9,8 +9,8 @@ namespace AppDesktopEpi.Model
 {
     public class Funcionario
     {
-        public string nome { get; set; }
         public int matricula { get; set; }
+        public string nome { get; set; }        
         public string epi { get; set; }       
         public DateTime data_entrega { get; set; }
         public DateTime data_vencimento { get; set; }

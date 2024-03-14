@@ -17,13 +17,8 @@ namespace AppDesktopEpi
     {
         public FrmPrincipal()
         {
-            InitializeComponent();
-            FrmSplash splash = new FrmSplash();
-            splash.Show();
-            Application.DoEvents();
-            Thread.Sleep(2000);
-            splash.Close();
-        }
+            InitializeComponent();            
+        }        
         private void btnSair_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
@@ -41,8 +36,7 @@ namespace AppDesktopEpi
         {
             FrmEntrega entrega = new FrmEntrega();
             entrega.Show();
-            this.Close();
-            
+            this.Hide();
         }
         private void btnEpi3dias_Click(object sender, EventArgs e)
         {
@@ -81,6 +75,7 @@ namespace AppDesktopEpi
                 txtMatricula.Text = "";
                 txtEpi.Text = "";
                 txtDias.Text = "";
+                txtNome.Text = "";
                 this.txtNome.Focus();
             }
             catch (Exception er)
@@ -118,9 +113,9 @@ namespace AppDesktopEpi
             try
             {
                 int matricula = Convert.ToInt32(txtMatricula.Text.Trim());
-                Funcionario func = new Funcionario();
+                
                 FunController controller = new FunController();
-                controller.Localizar(matricula);
+                Funcionario func = controller.Localizar(matricula);
                 txtNome.Text = func.nome;
                 txtEpi.Text = func.epi;
                 lblDataEntrega.Text = func.data_entrega.ToString("dd/MM/yyyy");

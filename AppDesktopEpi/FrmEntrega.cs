@@ -41,8 +41,8 @@ namespace AppDesktopEpi
                     item.CreateCells(dgvFunc);                    
                     item.Cells[0].Value = txtNome.Text;
                     item.Cells[1].Value = txtEpi.Text;
-                    item.Cells[2].Value = DateTime.Today.ToString();
-                    item.Cells[3].Value = DateTime.Today.AddDays(Convert.ToInt32(txtDias.Text)).ToString();
+                    item.Cells[2].Value = DateTime.Today.ToString("dd/MM/yyyy");
+                    item.Cells[3].Value = DateTime.Today.AddDays(Convert.ToInt32(txtDias.Text)).ToString("dd/MM/yyyy");
                     dgvFunc.Rows.Add(item);
                     txtEpi.Text = "";
                     txtDias.Text = "";
@@ -57,23 +57,27 @@ namespace AppDesktopEpi
 
                 MessageBox.Show(er.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            btnEditarItem.Enabled = true;
+            btnExcluirItem.Enabled = true;
+            btnFinalizarEntrega.Enabled = true;
         }
 
         private void FrmEntrega_Load(object sender, EventArgs e)
         {
             btnEditarItem.Enabled = false;
-            btnExcluirItem.Enabled = false;            
-            dgvFunc.Columns.Clear();
-            dgvFunc.Columns.Add("Matricula", "matricula");
+            btnExcluirItem.Enabled = false; 
+            btnFinalizarEntrega.Enabled = false;
+            dgvFunc.Columns.Clear();            
             dgvFunc.Columns.Add("Nome", "nome");
             dgvFunc.Columns.Add("EPI", "epi");
             dgvFunc.Columns.Add("Data Entrega", "data_entrega");
             dgvFunc.Columns.Add("Data Vencimento", "data_vencimento");
+            dgvFunc.AllowUserToAddRows = false;
         }
 
         private void btnExcluirItem_Click(object sender, EventArgs e)
         {
-            if (txtNome.Text == "" || txtEpi.Text == "" || txtDias.Text == "")
+            if (txtNome.Text == "" || txtEpi.Text == "")
             {
                 MessageBox.Show("Por favor, preencha todos os campos!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -104,8 +108,8 @@ namespace AppDesktopEpi
                 int linha = dgvFunc.CurrentRow.Index;                
                 dgvFunc.Rows[linha].Cells[0].Value = txtNome.Text;
                 dgvFunc.Rows[linha].Cells[1].Value = txtEpi.Text;
-                dgvFunc.Rows[linha].Cells[2].Value = DateTime.Today.ToString();
-                dgvFunc.Rows[linha].Cells[3].Value = DateTime.Today.AddDays(Convert.ToDouble(txtDias.Text)).ToString();
+                dgvFunc.Rows[linha].Cells[2].Value = DateTime.Today.ToString("dd/MM/yyyy");
+                dgvFunc.Rows[linha].Cells[3].Value = DateTime.Today.AddDays(Convert.ToDouble(txtDias.Text)).ToString("dd/MM/yyyy");
                 txtEpi.Text = "";
                 txtDias.Text = ""; 
             }
@@ -117,23 +121,22 @@ namespace AppDesktopEpi
 
         private void btnSair_Click(object sender, EventArgs e)
         {            
-            FrmPrincipal principal = new FrmPrincipal();
+            FrmPrincipal principal = new FrmPrincipal();            
             principal.Show();
             this.Close();
         }
 
         private void btnFinalizarEntrega_Click(object sender, EventArgs e)
         {
-            foreach (DataGridView dr in dgvFunc.Rows)
-            {
-                FunController controller = new FunController();
-                int linha = dgvFunc.CurrentRow.Index;
-                int matricula = Convert.ToInt32(dgvFunc[linha, 0]);
-                string nome = Convert.ToString(dgvFunc[linha, 1]);
-                string epi = Convert.ToString(dgvFunc[linha, 2]);
-                var data_entrega = Convert.ToDateTime(dgvFunc[linha, 3]);
-                var data_vencimento = Convert.ToDateTime(dgvFunc[linha, 4]);
-                controller.Inserir(matricula, nome, epi, data_entrega, data_vencimento);
+            FunController controller = new FunController();
+            for (int linha = 0; linha < dgvFunc.Rows.Count; linha++)
+            {                
+                string nome = Convert.ToString(dgvFunc.Rows[linha].Cells[0].Value);
+                string epi = Convert.ToString(dgvFunc.Rows[linha].Cells[1].Value);
+                var data_entrega = Convert.ToDateTime(dgvFunc.Rows[linha].Cells[2].Value);
+                var data_vencimento = Convert.ToDateTime(dgvFunc.Rows[linha].Cells[3].Value);
+
+                controller.Inserir(nome, epi, data_entrega, data_vencimento);
             }
             MessageBox.Show("Entrega efetuada com Sucesso!!", "Entrega EPI", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnEditarItem.Enabled = false;
@@ -142,7 +145,7 @@ namespace AppDesktopEpi
             btnNovoItem.Enabled = false;
             FrmPrincipal principal = new FrmPrincipal();
             principal.Show();
-            Environment.Exit(0);
+            this.Close();
         }
 
         private void dgvFunc_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -150,12 +153,9 @@ namespace AppDesktopEpi
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dgvFunc.Rows[e.RowIndex];
-                this.dgvFunc.Rows[e.RowIndex].Selected = true;
-                
+                this.dgvFunc.Rows[e.RowIndex].Selected = true;                
                 txtNome.Text = row.Cells[0].Value.ToString();
                 txtEpi.Text = row.Cells[1].Value.ToString();
-                
-
             }
             btnEditarItem.Enabled = true;
             btnExcluirItem.Enabled = true;

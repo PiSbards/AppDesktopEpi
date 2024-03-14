@@ -32,15 +32,15 @@
             this.btnEditarItem = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnNovoItem = new System.Windows.Forms.Button();
-            this.btnExcluirItem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtEpi = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDias = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnFinalizarEntrega = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnExcluirItem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +62,7 @@
             this.btnEditarItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarItem.ForeColor = System.Drawing.Color.White;
-            this.btnEditarItem.Location = new System.Drawing.Point(204, 242);
+            this.btnEditarItem.Location = new System.Drawing.Point(257, 243);
             this.btnEditarItem.Name = "btnEditarItem";
             this.btnEditarItem.Size = new System.Drawing.Size(88, 39);
             this.btnEditarItem.TabIndex = 1;
@@ -88,35 +88,20 @@
             // 
             // btnNovoItem
             // 
-            this.btnNovoItem.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnNovoItem.BackColor = System.Drawing.Color.Transparent;
+            this.btnNovoItem.BackgroundImage = global::AppDesktopEpi.Properties.Resources.soma;
+            this.btnNovoItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNovoItem.FlatAppearance.BorderSize = 0;
             this.btnNovoItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
             this.btnNovoItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNovoItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovoItem.ForeColor = System.Drawing.Color.White;
-            this.btnNovoItem.Location = new System.Drawing.Point(16, 243);
+            this.btnNovoItem.Location = new System.Drawing.Point(12, 188);
             this.btnNovoItem.Name = "btnNovoItem";
-            this.btnNovoItem.Size = new System.Drawing.Size(88, 39);
+            this.btnNovoItem.Size = new System.Drawing.Size(111, 94);
             this.btnNovoItem.TabIndex = 3;
-            this.btnNovoItem.Text = "NOVO ITEM";
             this.btnNovoItem.UseVisualStyleBackColor = false;
             this.btnNovoItem.Click += new System.EventHandler(this.btnNovoItem_Click);
-            // 
-            // btnExcluirItem
-            // 
-            this.btnExcluirItem.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnExcluirItem.FlatAppearance.BorderSize = 0;
-            this.btnExcluirItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
-            this.btnExcluirItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluirItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluirItem.ForeColor = System.Drawing.Color.White;
-            this.btnExcluirItem.Location = new System.Drawing.Point(110, 243);
-            this.btnExcluirItem.Name = "btnExcluirItem";
-            this.btnExcluirItem.Size = new System.Drawing.Size(88, 39);
-            this.btnExcluirItem.TabIndex = 4;
-            this.btnExcluirItem.Text = "EXCLUIR ITEM";
-            this.btnExcluirItem.UseVisualStyleBackColor = false;
-            this.btnExcluirItem.Click += new System.EventHandler(this.btnExcluirItem_Click);
             // 
             // label1
             // 
@@ -169,16 +154,6 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "VALIDADE(DIAS)";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::AppDesktopEpi.Properties.Resources.download;
-            this.pictureBox1.Location = new System.Drawing.Point(195, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(290, 174);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnFinalizarEntrega
             // 
             this.btnFinalizarEntrega.BackColor = System.Drawing.Color.Sienna;
@@ -195,10 +170,38 @@
             this.btnFinalizarEntrega.UseVisualStyleBackColor = false;
             this.btnFinalizarEntrega.Click += new System.EventHandler(this.btnFinalizarEntrega_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AppDesktopEpi.Properties.Resources.download;
+            this.pictureBox1.Location = new System.Drawing.Point(195, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(290, 174);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnExcluirItem
+            // 
+            this.btnExcluirItem.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnExcluirItem.BackgroundImage = global::AppDesktopEpi.Properties.Resources.Sem_título;
+            this.btnExcluirItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExcluirItem.FlatAppearance.BorderSize = 0;
+            this.btnExcluirItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
+            this.btnExcluirItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluirItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluirItem.ForeColor = System.Drawing.Color.White;
+            this.btnExcluirItem.Location = new System.Drawing.Point(120, 202);
+            this.btnExcluirItem.Name = "btnExcluirItem";
+            this.btnExcluirItem.Size = new System.Drawing.Size(88, 80);
+            this.btnExcluirItem.TabIndex = 4;
+            this.btnExcluirItem.UseVisualStyleBackColor = false;
+            this.btnExcluirItem.Click += new System.EventHandler(this.btnExcluirItem_Click);
+            // 
             // FrmEntrega
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(545, 499);
             this.ControlBox = false;
             this.Controls.Add(this.btnFinalizarEntrega);

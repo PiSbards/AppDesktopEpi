@@ -80,16 +80,16 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(11, 67);
+            this.txtNome.Location = new System.Drawing.Point(10, 67);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(146, 20);
+            this.txtNome.Size = new System.Drawing.Size(96, 20);
             this.txtNome.TabIndex = 9;
             // 
             // txtMatricula
             // 
-            this.txtMatricula.Location = new System.Drawing.Point(11, 22);
+            this.txtMatricula.Location = new System.Drawing.Point(9, 22);
             this.txtMatricula.Name = "txtMatricula";
-            this.txtMatricula.Size = new System.Drawing.Size(122, 20);
+            this.txtMatricula.Size = new System.Drawing.Size(97, 20);
             this.txtMatricula.TabIndex = 11;
             // 
             // txtEpi
@@ -105,7 +105,7 @@
             this.btnLocalizar.FlatAppearance.BorderSize = 0;
             this.btnLocalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLocalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLocalizar.Location = new System.Drawing.Point(139, 14);
+            this.btnLocalizar.Location = new System.Drawing.Point(112, 14);
             this.btnLocalizar.Name = "btnLocalizar";
             this.btnLocalizar.Size = new System.Drawing.Size(89, 32);
             this.btnLocalizar.TabIndex = 18;
