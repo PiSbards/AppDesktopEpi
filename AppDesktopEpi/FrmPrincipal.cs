@@ -68,7 +68,7 @@ namespace AppDesktopEpi
                 FunController controller = new FunController();
                 var data_entrega = DateTime.Today;
                 var data_vencimento = DateTime.Today.AddDays(Convert.ToInt32(txtDias.Text));
-                controller.Atualizar(Convert.ToInt32(txtMatricula.Text), txtNome.Text, txtEpi.Text, data_entrega,data_vencimento);
+                controller.Atualizar(Convert.ToInt32(txtId.Text),Convert.ToInt32(txtMatricula.Text), txtNome.Text, txtEpi.Text, data_entrega,data_vencimento);
                 MessageBox.Show("Registro de entrega de EPI atualizada com sucesso!!", "Atualização", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 List<Funcionario> funcionario = controller.listaFuncionario();
                 dgvFunc.DataSource = funcionario;
@@ -133,11 +133,12 @@ namespace AppDesktopEpi
             {
                 DataGridViewRow row = this.dgvFunc.Rows[e.RowIndex];
                 this.dgvFunc.Rows[e.RowIndex].Selected = true;
-                txtMatricula.Text = row.Cells[0].Value.ToString();
-                txtNome.Text = row.Cells[1].Value.ToString();
-                txtEpi.Text = row.Cells[2].Value.ToString();
-                lblDataEntrega.Text = Convert.ToDateTime(row.Cells[3].Value).ToString("dd/MM/yyyy");
-                lblDataVencimento.Text = Convert.ToDateTime(row.Cells[4].Value).ToString("dd/MM/yyyy");
+                txtId.Text = row.Cells[0].Value.ToString();
+                txtMatricula.Text = row.Cells[1].Value.ToString();
+                txtNome.Text = row.Cells[2].Value.ToString();
+                txtEpi.Text = row.Cells[3].Value.ToString();
+                lblDataEntrega.Text = Convert.ToDateTime(row.Cells[4].Value).ToString("dd/MM/yyyy");
+                lblDataVencimento.Text = Convert.ToDateTime(row.Cells[5].Value).ToString("dd/MM/yyyy");
                 
             }
             btnEditar.Enabled = true;

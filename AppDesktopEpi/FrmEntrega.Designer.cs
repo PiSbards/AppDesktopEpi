@@ -41,6 +41,8 @@
             this.btnFinalizarEntrega = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnExcluirItem = new System.Windows.Forms.Button();
+            this.txtMatricula = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -107,7 +109,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 6);
+            this.label1.Location = new System.Drawing.Point(9, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 15);
             this.label1.TabIndex = 5;
@@ -115,14 +117,14 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(12, 22);
+            this.txtNome.Location = new System.Drawing.Point(12, 58);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(100, 20);
             this.txtNome.TabIndex = 8;
             // 
             // txtEpi
             // 
-            this.txtEpi.Location = new System.Drawing.Point(12, 64);
+            this.txtEpi.Location = new System.Drawing.Point(12, 100);
             this.txtEpi.Name = "txtEpi";
             this.txtEpi.Size = new System.Drawing.Size(100, 20);
             this.txtEpi.TabIndex = 10;
@@ -131,7 +133,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 47);
+            this.label3.Location = new System.Drawing.Point(9, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 15);
             this.label3.TabIndex = 9;
@@ -139,7 +141,7 @@
             // 
             // txtDias
             // 
-            this.txtDias.Location = new System.Drawing.Point(12, 106);
+            this.txtDias.Location = new System.Drawing.Point(12, 142);
             this.txtDias.Name = "txtDias";
             this.txtDias.Size = new System.Drawing.Size(49, 20);
             this.txtDias.TabIndex = 14;
@@ -148,7 +150,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(10, 88);
+            this.label6.Location = new System.Drawing.Point(10, 124);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(113, 15);
             this.label6.TabIndex = 13;
@@ -197,6 +199,23 @@
             this.btnExcluirItem.UseVisualStyleBackColor = false;
             this.btnExcluirItem.Click += new System.EventHandler(this.btnExcluirItem_Click);
             // 
+            // txtMatricula
+            // 
+            this.txtMatricula.Location = new System.Drawing.Point(12, 22);
+            this.txtMatricula.Name = "txtMatricula";
+            this.txtMatricula.Size = new System.Drawing.Size(100, 20);
+            this.txtMatricula.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(9, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 15);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "MATRICULA:";
+            // 
             // FrmEntrega
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,6 +223,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(545, 499);
             this.ControlBox = false;
+            this.Controls.Add(this.txtMatricula);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnFinalizarEntrega);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtDias);
@@ -248,5 +269,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnFinalizarEntrega;
+        private System.Windows.Forms.TextBox txtMatricula;
+        private System.Windows.Forms.Label label2;
     }
 }

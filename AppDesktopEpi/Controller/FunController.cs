@@ -25,6 +25,7 @@ namespace AppDesktopEpi.Controller
             while (dr.Read())
             {
                 Funcionario func = new Funcionario();
+                func.id = (int)dr["id"];
                 func.matricula = (int)dr["matricula"];
                 func.nome = dr["nome"].ToString();                
                 func.epi = dr["epi"].ToString();
@@ -44,8 +45,9 @@ namespace AppDesktopEpi.Controller
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
-            {
+            {                
                 Funcionario func = new Funcionario();
+                func.id = (int)dr["id"];
                 func.matricula = (int)dr["matricula"];
                 func.nome = dr["nome"].ToString();
                 func.epi = dr["epi"].ToString();
@@ -67,6 +69,7 @@ namespace AppDesktopEpi.Controller
             while (dr.Read())
             {
                 Funcionario func = new Funcionario();
+                func.id = (int)dr["id"];
                 func.matricula = (int)dr["matricula"];
                 func.nome = dr["nome"].ToString();
                 func.epi = dr["epi"].ToString();
@@ -79,15 +82,16 @@ namespace AppDesktopEpi.Controller
             return li;
         }
 
-        public void Inserir(string nome, string epi, DateTime data_entrega, DateTime data_vencimento)
+        public void Inserir(int matricula,string nome, string epi, DateTime data_entrega, DateTime data_vencimento)
         {            
-            string sql = "INSERT INTO funcionario(nome,epi,data_entrega,data_vencimento) VALUES(@nome,@epi,@data_entrega,@data_vencimento)";
+            string sql = "INSERT INTO funcionario(matricula,nome,epi,data_entrega,data_vencimento) VALUES(@matricula,@nome,@epi,@data_entrega,@data_vencimento)";
             if (conn.State == ConnectionState.Closed)
             {
                 conn.Open();
             }
             using (MySqlCommand cmd = new MySqlCommand(sql, conn))
-            {
+            {                
+                cmd.Parameters.Add("@matricula",MySqlDbType.Int32).Value = matricula;
                 cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = nome;
                 cmd.Parameters.Add("@epi", MySqlDbType.VarChar).Value = epi;
                 cmd.Parameters.Add("@data_entrega", MySqlDbType.DateTime).Value = data_entrega;
@@ -99,15 +103,16 @@ namespace AppDesktopEpi.Controller
             conn.Close();
         }
 
-        public void Atualizar(int matricula, string nome,string epi, DateTime data_entrega,DateTime data_vencimento)
+        public void Atualizar(int id,int matricula, string nome,string epi, DateTime data_entrega,DateTime data_vencimento)
         {            
-            string sql = "UPDATE funcionario SET nome=@nome,epi=@epi,data_entrega=@data_entrega,data_vencimento=@data_vencimento WHERE matricula=@matricula";
+            string sql = "UPDATE funcionario SET matricula=@matricula,nome=@nome,epi=@epi,data_entrega=@data_entrega,data_vencimento=@data_vencimento WHERE id=@id";
             if (conn.State == ConnectionState.Closed)
             {
                 conn.Open();
             }
             using (MySqlCommand cmd = new MySqlCommand(sql, conn))
             {
+                cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
                 cmd.Parameters.Add("@matricula", MySqlDbType.Int32).Value = matricula;
                 cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = nome;
                 cmd.Parameters.Add("@epi", MySqlDbType.VarChar).Value = epi;
@@ -118,9 +123,9 @@ namespace AppDesktopEpi.Controller
             }
             conn.Close();
         }
-        public void Excluir(int matricula)
+        public void Excluir(int id)
         {
-            string sql = "DELETE FROM funcionario WHERE matricula='" + matricula + "'";
+            string sql = "DELETE FROM funcionario WHERE id='" + id + "'";
             if (conn.State == ConnectionState.Closed)
             {
                 conn.Open();
@@ -129,10 +134,10 @@ namespace AppDesktopEpi.Controller
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-        public Funcionario Localizar(int matricula)
+        public Funcionario Localizar(int id)
         {
             Funcionario funcionario = new Funcionario();
-            string sql = "SELECT * FROM funcionario WHERE matricula='"+matricula+"'";
+            string sql = "DELETE FROM funcionario WHERE id='" + id +"'";
             if (conn.State == ConnectionState.Closed)
             {
                 conn.Open();
