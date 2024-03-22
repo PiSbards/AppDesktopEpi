@@ -63,19 +63,22 @@ namespace AppDesktopEpi
             }
             try
             {
-                int matricula = Convert.ToInt32(txtMatricula.Text.Trim());
+                
                 Funcionario func = new Funcionario();
                 FunController controller = new FunController();
                 var data_entrega = DateTime.Today;
                 var data_vencimento = DateTime.Today.AddDays(Convert.ToInt32(txtDias.Text));
-                controller.Atualizar(Convert.ToInt32(txtId.Text),Convert.ToInt32(txtMatricula.Text), txtNome.Text, txtEpi.Text, data_entrega,data_vencimento);
+                controller.Atualizar(Convert.ToInt32(txtId.Text.Trim()),Convert.ToInt32(txtMatricula.Text), txtNome.Text, txtEpi.Text, data_entrega,data_vencimento);
                 MessageBox.Show("Registro de entrega de EPI atualizada com sucesso!!", "Atualização", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 List<Funcionario> funcionario = controller.listaFuncionario();
                 dgvFunc.DataSource = funcionario;
+                txtId.Text = "";
                 txtMatricula.Text = "";
                 txtEpi.Text = "";
                 txtDias.Text = "";
                 txtNome.Text = "";
+                lblDataEntrega.Text = "";
+                lblDataVencimento.Text = "";
                 this.txtNome.Focus();
             }
             catch (Exception er)
@@ -88,12 +91,13 @@ namespace AppDesktopEpi
         {
             try
             {
-                int matricula = Convert.ToInt32(txtMatricula.Text.Trim());                
+                int id = Convert.ToInt32(txtId.Text.Trim());                
                 FunController controller = new FunController();
-                controller.Excluir(matricula);
+                controller.Excluir(id);
                 MessageBox.Show("Registro de entrega de EPI excluída com sucesso!!", "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 List<Funcionario> funcionarios = controller.listaFuncionario();
                 dgvFunc.DataSource = funcionarios;
+                txtId.Text = "";
                 txtMatricula.Text = "";
                 txtNome.Text = "";
                 txtEpi.Text = "";
@@ -112,10 +116,11 @@ namespace AppDesktopEpi
             btnExcluir.Enabled = true;
             try
             {
-                int matricula = Convert.ToInt32(txtMatricula.Text.Trim());
+                int id = Convert.ToInt32(txtId.Text.Trim());
                 
                 FunController controller = new FunController();
-                Funcionario func = controller.Localizar(matricula);
+                Funcionario func = controller.Localizar(id);
+                txtMatricula.Text = Convert.ToString(func.matricula);
                 txtNome.Text = func.nome;
                 txtEpi.Text = func.epi;
                 lblDataEntrega.Text = func.data_entrega.ToString("dd/MM/yyyy");

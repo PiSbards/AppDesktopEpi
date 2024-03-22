@@ -114,7 +114,8 @@ namespace AppDesktopEpi
                 dgvFunc.Rows[linha].Cells[3].Value = DateTime.Today.ToString("dd/MM/yyyy");
                 dgvFunc.Rows[linha].Cells[4].Value = DateTime.Today.AddDays(Convert.ToDouble(txtDias.Text)).ToString("dd/MM/yyyy");
                 txtEpi.Text = "";
-                txtDias.Text = ""; 
+                txtDias.Text = "";
+                MessageBox.Show("Edição realizada com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception er)
             {

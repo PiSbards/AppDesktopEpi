@@ -137,7 +137,7 @@ namespace AppDesktopEpi.Controller
         public Funcionario Localizar(int id)
         {
             Funcionario funcionario = new Funcionario();
-            string sql = "DELETE FROM funcionario WHERE id='" + id +"'";
+            string sql = "SELECT * FROM funcionario WHERE id='" + id +"'";
             if (conn.State == ConnectionState.Closed)
             {
                 conn.Open();
@@ -146,6 +146,7 @@ namespace AppDesktopEpi.Controller
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
+                funcionario.id = (int)dr["id"];
                 funcionario.matricula = (int)dr["matricula"];
                 funcionario.nome = dr["nome"].ToString();                
                 funcionario.epi = dr["epi"].ToString();
